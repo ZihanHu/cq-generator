@@ -51,7 +51,9 @@ async function handleSave(options?: SaveOptions): Promise<void> {
     dpi: 300,
   });
   const image = canvas.toDataURL();
-  const pdf = new jsPDF();
+  const pdf = new jsPDF({
+    compress: true,
+  });
   pdf.addImage(image, 'PNG', 0, 0, 210, 297);
   const url = pdf.output('bloburl');
   const el = document.createElement('a');
