@@ -1,0 +1,4 @@
+.eslintrc.*
+.output
+dist
+nuxt.config.ts
