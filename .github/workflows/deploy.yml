@@ -38,7 +38,7 @@ jobs:
       - name: 构建静态站点
         run: |
           pnpm generate
-          git add dist -f
+          git add .output/public -f
           git commit -m "部署"
       - name: 推送物料
         run: git push origin gh-pages --set-upstream
@@ -65,10 +65,10 @@ jobs:
       - name: 设置环境
         uses: actions/configure-pages@v2
         with:
-          path: dist
+          path: .output/public
       - name: 上传物料
         uses: actions/upload-pages-artifact@v1
         with:
-          path: dist
+          path: .output/public
       - name: 发布线上
         uses: actions/deploy-pages@v1
