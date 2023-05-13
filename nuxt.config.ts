@@ -1,5 +1,8 @@
 export default defineNuxtConfig({
   ssr: false,
+  app: {
+    baseURL: '/cq-generator/',
+  },
   modules: [
     '@nuxtjs/tailwindcss',
   ],
