@@ -1,0 +1,45 @@
+name: 测试
+on: pull_request
+jobs:
+  ESLint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v3
+      - name: 初始化 Node.js 环境
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.15.0
+      - name: 获取缓存
+        uses: actions/cache@v3
+        with:
+          key: node_modules
+          path: node_modules
+      - name: 安装包管理器
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8
+      - name: 运行测试命令
+        run: |
+          pnpm lint
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v3
+      - name: 初始化 Node.js 环境
+        uses: actions/setup-node@v3
+        with:
+          node-version: 
+      - name: 安装包管理器
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8
+      - name: 获取缓存
+        uses: actions/cache@v3
+        with:
+          key: node_modules
+          path: node_modules
+      - name: 运行构建命令
+        run: |
+          pnpm build
