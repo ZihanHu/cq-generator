@@ -36,7 +36,7 @@
     "eslint-config-airbnb-base": "14.2.1",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-vue": "^7.20.0",
-    "nuxt": "^3.4.3",
+    "nuxt": "^3.5.0",
     "vue-eslint-parser": "^9.2.1"
   }
 }
