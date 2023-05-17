@@ -47,8 +47,6 @@ async function handleSave(options?: SaveOptions): Promise<void> {
   const filename = options?.filename ?? `口算训练_${id}`;
   const canvas = await htmlToCanvas(document.getElementById(id)!, {
     scale: 3,
-    //@ts-expect-error
-    dpi: 300,
   });
   const image = canvas.toDataURL();
   const pdf = new jsPDF({
