@@ -19,6 +19,7 @@
   "dependencies": {
     "@arco-design/web-vue": "^2.45.3",
     "@nuxtjs/tailwindcss": "^6.6.7",
+    "eslint-plugin-nuxt": "^4.0.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
     "lodash-es": "^4.17.21",

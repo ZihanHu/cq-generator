@@ -1,11 +1,13 @@
 module.exports = {
+  root: true,
+  parser: 'vue-eslint-parser',
   env: {
     browser: true,
     es2020: true,
     node: true,
   },
   extends: [
-    'eslint:recommended',
+    'plugin:nuxt/recommended',
     'plugin:vue/vue3-essential',
     'plugin:@typescript-eslint/recommended',
   ],
@@ -23,17 +25,13 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
-    /**
-     * namespace 需要。
-     */
+    /** namespace 需要。 */
     'no-inner-declarations': [0],
-    /**
-     * 使用 Nuxt 自动导入不会使用 `as OneModule` 这种语法，所以暂时使用 namespace 代替。
-     */
+    /** 用得到。 */
+    'vue/no-setup-props-destructure': [0],
+    /** 使用 Nuxt 自动导入不会使用 `as OneModule` 这种语法，所以暂时使用 namespace 代替。 */
     '@typescript-eslint/no-namespace': [0],
-    /**
-     * 在清楚副作用的情况下，非空断言很有用。
-     */
+    /** 在清楚副作用的情况下，非空断言很有用。 */
     '@typescript-eslint/no-non-null-assertion': [0],
   },
 };
